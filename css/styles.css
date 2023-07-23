@@ -14,6 +14,8 @@
     --background-color: #fff;
     --icons-color-footer: #fff;
     --border-color-active:#2196F3;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+    --current-page-color: #2196F3;
 }
 
 * {
@@ -50,6 +52,8 @@ ul {
 
 a{
     text-decoration: none;
+    transition:  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .container{
@@ -79,15 +83,6 @@ line-height: normal;
 letter-spacing: 0.78px;
 }
 
-.studio{
-  color: var(--link-color);
-}
-
-.studio-activ,
-.portfolio-activ{
-    color: var(--link-active-color);
-}
-
 
 .nav-menu ul{
     display: flex;
@@ -107,7 +102,8 @@ letter-spacing: 0.78px;
 
 .portfolio-header, 
 .contacts-header,
-.studio-portfolio{
+.studio-portfolio,
+.studio-activ{
 color: var(--text-color);
 font-family: var(--text-font-family);
 font-size: 14px;
@@ -115,6 +111,11 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 letter-spacing: 0.28px;
+}
+
+.studio-activ,
+.portfolio-activ{
+    color: var(--link-active-color);
 }
 
 .header-contacts{
@@ -151,6 +152,24 @@ fill: #757575;
 .portfolio-activ:hover, .portfolio-activ:focus
 {
   color: var(--link-active-color);
+}
+
+.current-page{
+position: relative;
+color:var(--current-page-color);
+}
+
+.current-page::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -33px;
+  width: 42px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: #2196F3;
 }
 
 /* -----------Main--------------- */
@@ -304,6 +323,30 @@ fill: #757575;
   letter-spacing: 1.08px;
 }
 
+.description-images{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(47, 48, 58, 0.80);
+  width: 370px;
+  height: 70px;
+  flex-shrink: 0;
+  margin-top: 225px;
+}
+
+.type-apps{
+color: #FFF;
+text-align: center;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.42px;
+text-transform: uppercase;
+}
+
 /* --------Our Team-------- */
 
 .our-team{
@@ -379,6 +422,7 @@ fill: #757575;
   margin-top: 16px;
   margin-bottom: 30px;
   gap: 10px;
+  
 }
 
 .icon-team-list .team-icon {
@@ -390,6 +434,7 @@ fill: #757575;
   background-color: var(--background-color);
   color: #afb1b8;
   border-radius: 50%;
+  transition: background-color 250ms var(--transition);
 }
 
 .icon-team-list .team-icon svg {
@@ -436,11 +481,14 @@ fill: #757575;
   justify-content: center;
   align-items: center;
   margin-bottom: 94px;
+  transition: color 250ms var(--transition);
+  
 }
 .regular-customers-logo {
   width: 106px;
   height: 60px;
   color: #afb1b8;
+  transition: color 250ms var(--transition);
 }
 
 .regular-customers-logo-container:hover,
@@ -450,6 +498,8 @@ fill: #757575;
   cursor: pointer;
   fill: var(--border-color-active);
 }
+
+
 
 /* -------Footer------- */
 
@@ -563,8 +613,8 @@ fill: #757575;
   background-color: var(--border-color-active);
 }
 
-.twitter-logo{
-  background-color: var(--border-color-active);
+.footer-icon-container a{
+  transition: background-color 250ms var(--transition);
 }
 
 /* ----------Portfolio Page--------- */
@@ -678,6 +728,9 @@ fill: #757575;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:rgba(0, 0, 0, 0.20);
+  transition: 250ms var(--transition)
+  
 }
 
 .modal-content{
@@ -691,6 +744,9 @@ fill: #757575;
 
 .is-hidden{
 visibility: hidden;
+opacity: 0;
+pointer-events:none;
+transform: scale(1.1);
 }
 
 .close-button{
