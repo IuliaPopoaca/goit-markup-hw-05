@@ -16,6 +16,7 @@
   --border-color-active: #2196f3;
   --transition: cubic-bezier(0.4, 0, 0.2, 1);
   --current-page-color: #2196f3;
+  --close-button-color: #212121;
 }
 
 * {
@@ -836,11 +837,13 @@ a {
   border-radius: 50%;
   border: 2px solid rgba(0, 0, 0, 0.1);
   stroke-width: 1px;
+  color: var(--close-button-color);
 }
 
 .svg-close-button {
   width: 18px;
   height: 18px;
+  color: var(--close-button-color);
 }
 
 .close-button:focus,
