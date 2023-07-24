@@ -480,6 +480,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1600px;
 }
 .regular-customers-title {
   margin-bottom: 50px;
@@ -718,6 +719,7 @@ a {
   align-items: center;
   gap: 30px;
   margin-bottom: 94px;
+  width: 1567px;
 }
 
 .project {
